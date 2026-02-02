@@ -1,4 +1,4 @@
-name: Generate Downloadable Artifacts (sphinx image)
+name: Generate Downloadable Artifacts (nginx image)
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
         context: .
         file: Dockerfile
         tags: sphinx:${{ github.sha }}
-        outputs: type=docker,dest=./sphinx-image.tar
+        outputs: type=docker,dest=./nginx-image.tar
     
     - name: Compress Docker image
       run: |
@@ -37,6 +37,6 @@ jobs:
     - name: Upload Docker image artifact
       uses: actions/upload-artifact@v4
       with:
-        name: sphinx-docker-image
+        name: nginx-docker-image
         path: ${{ env.IMAGE_NAME }}
         retention-days: 7
