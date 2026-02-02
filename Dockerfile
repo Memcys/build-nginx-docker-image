@@ -5,5 +5,5 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # 为 rootless-docker (podman) 安装 slirp4netns
-sudo apt update
-sudo apt install -y slirp4netns
+RUN apt update
+RUN apt install -y slirp4netns
