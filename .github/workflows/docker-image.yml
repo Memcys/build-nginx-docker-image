@@ -31,7 +31,7 @@ jobs:
     - name: Compress Docker image
       run: |
         gzip -c ./nginx-image.tar > nginx-image-${{ github.sha }}.tar.gz
-        rm ./sphinx-image.tar
+        rm ./nginx-image.tar
         echo "IMAGE_NAME=nginx-image-${{ github.sha }}.tar.gz" >> $GITHUB_ENV
     
     - name: Upload Docker image artifact
