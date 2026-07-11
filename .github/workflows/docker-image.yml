@@ -33,7 +33,7 @@ jobs:
       with:
         context: .
         file: Dockerfile
-        tags: sphinx:${{ github.sha }}
+        tags: nginx:${{ github.sha }}
         outputs: type=docker,dest=./nginx-image.tar
     
     - name: Compress Docker image
